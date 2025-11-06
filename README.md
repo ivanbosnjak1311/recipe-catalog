@@ -1,46 +1,106 @@
-# Astro Starter Kit: Basics
+# Katalog Recepat – Astro + Tailwind CSS
 
-```sh
-npm create astro@latest -- --template basics
+![Astro](https://img.shields.io/badge/Astro-5.15.3-blue?logo=astro)  
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.17-blue?logo=tailwind-css)  
+![License](https://img.shields.io/badge/License-MIT-green)
+
+Jednostavan **katalog recepata** napravljen u **Astro 4** koristeći **Tailwind CSS 4.1.17**.  
+Omogućava prikaz liste recepata na početnoj stranici i detaljan prikaz svakog recepta koristeći Markdown fajlove.
+
+---
+
+## 🚀 Pokretanje projekta
+
+1. Kloniraj repozitorij i instaliraj zavisnosti:
+
+```bash
+git clone <tvoj-repo-url>
+cd recipe-catalog
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Pokreni razvojni server:
 
-## 🚀 Project Structure
+```bash
+npm run dev
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+3. Otvori u browseru:
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+http://localhost:4321
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 🗂️ Struktura projekta
 
-All commands are run from the root of the project, from a terminal:
+```text
+src/
+├─ components/      # RecipeCard, Header, Footer
+├─ layouts/         # BaseLayout
+├─ pages/           # index.astro + recipes/[slug].astro
+├─ data/recipes/    # Markdown fajlovi sa receptima
+└─ styles/          # global.css
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## 📝 Dodavanje novih recepata
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Kreiraj Markdown fajl u `src/data/recipes/`:
+
+```markdown
+---
+title: "Ime recepta"
+slug: "ime-recepta"
+prepTime: "15 min"
+cookTime: "30 min"
+servings: 2
+image: "/images/ime-slike.jpg"
+tags: ["tag1", "tag2"]
+---
+
+## Sastojci
+- sastojak 1
+- sastojak 2
+
+## Uputstvo
+1. Korak 1
+2. Korak 2
+```
+
+2. Slika treba da se nalazi u `public/images/`.
+
+---
+
+## 🎨 Tehnologije
+
+- [Astro 4](https://astro.build/) – Static Site Generator  
+- [Tailwind CSS 4.1.17](https://tailwindcss.com/) – Utility-first CSS framework  
+- Markdown – za sadržaj recepata  
+- Vite – bundler koji dolazi sa Astro  
+
+---
+
+## 📂 Komponente
+
+- `RecipeCard.astro` – kartica recepta sa slikom, naslovom i tagovima  
+- `Header.astro` – navigacija  
+- `Footer.astro` – footer sa copyright informacijama  
+- `BaseLayout.astro` – layout sa `<head>` i globalnim CSS-om  
+
+---
+
+## 🔧 Preporuke
+
+- Dodaj više Markdown recepata u `src/data/recipes/`  
+- Slike stavi u `public/images/`  
+- Možeš dodati filtere ili search po tagovima na početnoj stranici  
+
+---
+
+## 📄 License
+
+MIT © 2025 – svi fajlovi su slobodni za korišćenje i prilagođavanje.
+

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { MarkdownInstance } from 'astro';
+
+// Dinamičke rute
+export async function getStaticPaths() {
+  const recipes = Object.entries(
+    import.meta.glob('../../data/recipes/*.md', { eager: true })
+  ).map(([path, module]) => {
+    const slug = path.split('/').pop().replace('.md', '');
+    return { slug, module };
+  });
+
+  return recipes.map((r) => ({
+    params: { slug: r.slug },
+  }));
+}
+
+// Dohvati Markdown fajl koji odgovara slug-u
+const { slug } = Astro.params;
+const modules = import.meta.glob('../../data/recipes/*.md', { eager: true });
+const recipeModule = modules[`../../data/recipes/${slug}.md`];
+if (!recipeModule) throw new Error('Recept nije pronađen');
+
+const recipe = {
+  ...recipeModule.frontmatter,
+  Content: recipeModule.default
+};
+---
+<BaseLayout>
+  <article class="prose max-w-3xl mx-auto py-12 px-4">
+    <h1>{recipe.title}</h1>
+    <img src={recipe.image} alt={recipe.title} class="my-4 rounded"/>
+    <recipe.Content />
+  </article>
+</BaseLayout>
