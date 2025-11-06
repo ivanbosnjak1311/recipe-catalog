@@ -76,7 +76,7 @@ tags: ["tag1", "tag2"]
 
 ## 🎨 Tehnologije
 
-- [Astro 4](https://astro.build/) – Static Site Generator  
+- [Astro 5](https://astro.build/) – Static Site Generator  
 - [Tailwind CSS 4.1.17](https://tailwindcss.com/) – Utility-first CSS framework  
 - Markdown – za sadržaj recepata  
 - Vite – bundler koji dolazi sa Astro  
