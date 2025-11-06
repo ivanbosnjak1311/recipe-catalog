@@ -4,7 +4,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.17-blue?logo=tailwind-css)  
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Jednostavan **katalog recepata** napravljen u **Astro 4** koristeći **Tailwind CSS 4.1.17**.  
+Jednostavan **katalog recepata** napravljen u **Astro 5** koristeći **Tailwind CSS 4.1.17**.  
 Omogućava prikaz liste recepata na početnoj stranici i detaljan prikaz svakog recepta koristeći Markdown fajlove.
 
 ---
